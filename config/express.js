@@ -37,6 +37,7 @@ module.exports = function () {
     post_routes(app)
     jogo_routes(app)
     comentario_routes(app)
+    app.use('/', express.static(__dirname+'/site'))
     app.use('/public', express.static(__dirname+'/uploads'))
     app.get('/api', function (req, res) {
         res.status(201).send('deu certo')
