@@ -12,7 +12,6 @@ module.exports.inserirComentario = function (req, res) {
     function (comentario) {
       res.status(201).json(comentario)
     }
-
   )
     .catch(
       function () {

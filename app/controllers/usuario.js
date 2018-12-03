@@ -29,7 +29,7 @@ module.exports.inserirUsuario = function (req, res) {
 }
 
 module.exports.getUsuarios = function (req, res) {
-    let promise = Usuario.find({}, 'email gamertag')
+    let promise = Usuario.find({}, 'email gamertag avatar')
     promise.then(
         function (usuarios) {
             res.status(201).json(usuarios)
