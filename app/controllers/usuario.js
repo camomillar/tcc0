@@ -7,7 +7,8 @@ module.exports.inserirUsuario = function (req, res) {
         gamertag: req.body.gamertag,
         email: req.body.email,
         //senha: bcrypt.hashSync(req, body.senha, 10)
-        senha: req.body.senha
+        senha: req.body.senha,
+        avatar: (Math.floor(Math.random()*5)+1)+'.png'
     });
     let promise = Usuario.create(usuario)
     promise.then(

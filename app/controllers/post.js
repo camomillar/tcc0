@@ -37,6 +37,22 @@ module.exports.getPosts = function(req, res){
         }
     )
 }
+
+module.exports.likePost = function(req, res) {
+    let id = req.params._id;
+    let promise = Post.findOneAndUpdate({_id: id}, {$inc:{likes: 1}}, {new: true})
+    promise.then(
+        function(post){
+            res,status(201).json(post)
+        }
+    )
+    .catch(
+        function(){
+            res.status(404).send('nao existe')
+        }
+    )
+}
+
 module.exports.getPostById = function(req, res){
     let id = req.params.id
     let promise = Post.findById(id)

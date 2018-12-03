@@ -5,10 +5,15 @@ module.exports = function(){
         comentario: {
             type: String
         },
-        uid: {
-            type: mongoose.Schema.ObjectId,
-            ref: 'Usuario'
+        gamertag: {
+            type:String
         },
+        avatar: {
+            type: String
+        },
+        report: {
+            type: String
+        }
     })
     return mongoose.model('Comentario', schema)
 }();
