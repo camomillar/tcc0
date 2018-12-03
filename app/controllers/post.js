@@ -47,8 +47,8 @@ module.exports.likePost = function(req, res) {
         }
     )
     .catch(
-        function(){
-            res.status(404).send('nao existe')
+        function(error){
+            res.status(404).json(error)
         }
     )
 }
