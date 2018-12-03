@@ -40,7 +40,7 @@ module.exports.getPosts = function(req, res){
 
 module.exports.likePost = function(req, res) {
     let id = req.params._id;
-    let promise = Post.findOneAndUpdate({_id: id}, {$inc:{likes: 1}}, {new: true})
+    let promise = Post.findByIdAndUpdate({_id: id},{$inc:{likes: 1}},{new: true})
     promise.then(
         function(post){
             res,status(201).json(post)
