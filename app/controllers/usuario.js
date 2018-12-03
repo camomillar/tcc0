@@ -16,7 +16,8 @@ module.exports.inserirUsuario = function (req, res) {
             res.status(201).json({
                 _id: usuario._id,
                 gamertag: usuario.gamertag,
-                email: usuario.email
+                email: usuario.email,
+                avatar: usuario.avatar
             })
         }
     )
