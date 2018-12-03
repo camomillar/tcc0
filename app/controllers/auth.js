@@ -20,7 +20,8 @@ module.exports.signin = function (req, res) {
                     token: token,
                     message: 'Logged',
                     email: user.email,
-                    gamertag: user.gamertag
+                    gamertag: user.gamertag,
+                    avatar: user.avatar
                 })
             } else {
                 res.status(403).send('Login Invalido')
